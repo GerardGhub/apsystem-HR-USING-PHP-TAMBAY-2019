@@ -1,0 +1,868 @@
+<?php include 'includes/session.php'; ?>
+<?php include 'includes/header.php'; ?>
+<head>
+  			<link rel="shortcut icon" href="includes/enma.jpg" type="image/x-icon"/>
+<style>
+.zoom {
+ //padding: 50px;
+  //background-color: green;
+  transition: transform .200s; /* Animation */
+
+ // height: 100px;
+  margin: 0 auto;
+}
+.zoom:hover {
+  transform: scale(3.5); /* (390% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+</style>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <?php include 'includes/navbar.php'; ?>
+  <?php include 'includes/menubar.php'; ?>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="background-color:window;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Employee List
+      </h1>
+      <ol class="breadcrumb">
+        <!--li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li>Employees</li>
+        <li class="active">Employee List</li-->
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <?php
+        if(isset($_SESSION['error'])){
+          echo "
+            <div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-warning'></i> Error!</h4>
+              ".$_SESSION['error']."
+            </div>
+          ";
+          unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+          echo "
+            <div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              ".$_SESSION['success']."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header with-border">
+               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+            </div>
+            <div class="box-body">
+              <form method="post" action="delete.php" >
+						  
+            <table class="display table table-striped" id="example" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+	      <th style="width:1%;background-color:#454545; border-radsius:15px; color:white; text-align:center; font-size:10px; color:white;">:)</th>
+		  
+		  
+              <th style="width:1%;background-color:#454545; border-radsius:15px; color:white; text-align:center; font-size:15px; color:white;">IMG</th>
+           
+	   	<th style="width:5%;background-color:#454545; border-radisus:15px; color:white; text-align:center; font-size:15px; color:white;">Name</th>
+		
+		
+			   	<th style="width:5%;background-color:#454545; border-rasdius:15px; color:white; text-align:center; font-size:15px; color:white;">Employee&nbsp;ID</th>
+				
+					   	<th style="width:5%;background-color:#454545; border-radsius:15px; color:white; text-align:center; font-size:15px; color:white;">Department</th>
+				
+			 <th style="width:5%;background-color:#454545; color:white; text-align:center; font-size:15px; border-radsius:15px; color:white;">Section</th>
+		         	<th style="width:5%;background-color:#454545; border-radsius:15px; color:white; text-align:center; font-size:15px; color:white;">Position</th>  
+					   	<th style="width:5%;background-color:#454545; border-radisus:15px; color:white; text-align:center; font-size:15px; color:white;">ScheduLe</th>
+						
+						
+						   	<th style="width:5%;background-color:#454545; border-rasdius:15px; color:white; text-align:center; font-size:15px; color:white;">Member&nbsp;Since</th>
+							
+							
+							   	<th style="width:5%;background-color:#454545; border-radsius:15px; color:white; text-align:center; font-size:15px; color:white;">Status</th>
+							
+		  <th style="width:4%;background-color:#454545; color:white; border-radisus:15px; text-align:center; font-size:15px; color:white;">Depreciation</th>
+	  <th style="width:4%;background-color:#454545; color:white; text-align:center; border-radxius:15px; font-size:15px; color:white;">Status</th>
+	  <th style="width:4%;background-color:#454545; border-radixus:15px; color:white; text-align:center; font-size:15px; color:white;">Post</th>
+	  <th style="width:4%;background-color:#454545; border-radixus:15px; color:white; text-align:center; font-size:15px; color:white;">&nbsp;Edit</th>
+                 
+                </tr>
+              </thead>
+           <tbody>
+                <?php
+   include('connect.php');
+              function formatMoney($number, $fractional=false) {
+                if ($fractional) {
+                  $number = sprintf('%.2f', $number);
+                }
+                while (true) {
+                  $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                  if ($replaced != $number) {
+                    $number = $replaced;
+                  } else {
+                    break;
+                  }
+                }
+                return $number;
+              } 
+              ?>
+          
+           <?php
+		   include('db.php');
+		   $department=$_SESSION['sess_department'];
+           $get_id=$_GET['id']; 
+               $query = mysql_query("SELECT *, employees.id AS empid FROM employees LEFT JOIN position ON position.id=employees.position_id LEFT JOIN schedules ON schedules.id=employees.schedule_id LEFT JOIN department ON department.id=employees.department WHERE employees.resigned='1' AND employees.department='$get_id'") or die(mysql_error());
+                        while ($row = mysql_fetch_array($query)) {
+                      $empid=$row['empid'];
+							//$name=$row['item_image'];
+						//	$date=$row['item_date'];      
+            ?>
+			
+				<!--?php 
+							$query=mysql_query("select * from filemgrmis ORDER BY item_id DESC")or die(mysql_error());
+							while($row=mysql_fetch_array($query)){
+							$item_id=$row['item_id']; original
+							$name=$row['item_image'];
+							$date=$row['item_date'];
+							?-->
+      <tr>
+	  
+	  
+	  <td>
+	   <a rel="tooltip" class="btsn btn-info" href="editassets.php?item_id=<?php echo $row['item_id']; ?>" title="Click for Edit" onclick="return confirm('Are you sure you want to Update this Existing Image ?')"><span class="glyphicon glyphicon-edit" style="font-size:17px; color:white;"></span></a> 
+	  
+	  </td>
+	   <td class="zoom" style="width:5%;">
+	   	
+				<center> <img src="../images/<?php echo $row['photo'];?>" class="img img-rounded"  width="65" height="45" /></center>
+				 </td>
+	  
+	  
+	  
+	  
+					 			
+	  
+	  
+	  
+	  
+
+       
+           
+			  
+			  		  
+		
+		
+			  
+			  	    	    <td style="text-align:center;
+			  "><?php echo $row['firstname'].' '.$row['lastname']; ?></td>
+			  
+			  			  	    	    <td style="text-align:center;
+			  "><?php echo $row['employee_id'];?></td>
+			  
+			  
+			  		  	    	    <td style="text-align:center;
+			  "><?php echo $row['department_data'];?></td>
+			  <td> <?php echo $row['dept_section'];?></td>
+			  <td> <?php echo $row['description'];?></td>
+			   <td> 
+			   
+			   <!--?php
+			   include('connect.php');
+			   $cat=$row['employee_id'];
+			   $query74 = mysql_query("Select * from empleyado where employee_id='$cat'") or die(mysql_error());
+			   $row555 = mysql_fetch_array($query74);
+			    echo $row555['Name'];
+			   ?-->
+			   <?php echo date('h:i A', strtotime($row['time_in'])).' - '.date('h:i A', strtotime($row['time_out'])); ?>
+			   
+			   
+			   </td>
+			   <td><?php echo $row['created_on'];?></td>
+       
+              <!--td style="width:37%;"><?php echo $row['item_image'];?></td-->
+			  
+			  			  
+			  <!--td>
+			  		<?php
+
+
+
+$file= '../../../ong/item_images/'.$row["item_image"].'';
+$filesize = filesize($file);
+$filesize = round($filesize /1024 / 1024, 1);
+
+echo "$filesize".'MB';
+?>
+		</td-->	  
+
+			  
+			  
+			  
+			  
+			  
+			                <td style="text-align:center;width:5%;"><?php echo $row['emp_status'];?></td>
+          
+              <!--td><?php  $price=$row['price'];
+              echo 'PHP'.formatMoney($price,true);?></td-->
+
+			 
+			  
+			  
+			  
+			  
+			  
+			<td style="text-align:center; width:6%;">
+
+	  <!--a rel="tooltip" class="btn btn-success"  title="Click to Upload files"  stytle="text-align:center;" id="<?php echo $id; ?>" onclick="return confirm('Are you sure you want to Add a New Data?')" a data-toggle="modal" data-target="#uploadModalsamplexmemosuperjeje" data-toggle="modal"    class="btn btn-light"><span class="
+glyphicon glyphicon-cloud-upload" style="text-align:center; color:white"></span><i class="icon-trash icon-large"></i>&nbsp;Upload</a-->
+
+
+						    	
+			<a href="#depreciation<?php echo $row['item_id'];?>" class="btn btn-info" title="Click to Download" data-toggle="modal"></span>View</a>	
+										
+														   
+				
+				</td>
+				
+					<td style="width:5%;">					
+											   
+						<a href="#dispossal<?php echo $row['item_id'];?>" class="btn btn-primary" title="Click to Download" data-toggle="modal"></span><?php echo $row['firstname'];?></a>
+						</td>			
+									
+										
+				<td style="width:4%;" class="<?php echo $row['posted'];?>">						
+										
+			<a href="#post<?php echo $row ['item_id'];?>"  class="<?php echo $row ['postedk'];?> btn btn-success" data-toggle="modal" title="Click to Post"></span><?php echo $row ['firstname'];?></a>
+</td>
+
+<td style="width:5%;">
+					 
+ 	<a href="#update<?php echo $row ['empid'];?>"  class="btn btn-warning <?php echo $row['empid'];?>" title="Click to Edit" data-toggle="modal"></span>Edit</a>			
+  
+	 
+	 
+	 	<!--a rel="tooltip" class="btn btn-danger"href="myfilemgr/delete.php?del=<?php echo $row['item_id']?>"  onclick="return confirm('Are you sure to remove this Selected File?')"><span class="glyphicon glyphicon-trash" style="color:white" ></span>&nbsp; Delete</a-->
+	 
+ </td>
+      
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	   
+	  <!--Edit Item Modal -->
+                    <div id="update<?php echo $row ['empid'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      
+									     <h4 class="modal-title"><img src="../images/<?php $cat=$row['empid'];
+              $query99 = mysql_query("select * from employees where id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['photo'];
+              ?>" height="70" width="105" class="zoom"></img></center>
+			  <b style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HR | Employee Details of
+			  <?php $cat=$row['empid'];
+              $query990 = mysql_query("select * from employees where id='$cat'");
+              $row001 = mysql_fetch_array($query990);
+              echo $row001['firstname']; echo"&nbsp;";echo $row001['lastname'];
+              ?>
+			  </b>
+			  
+			  <img src="images/GerardSS.jpg" height="70" width="105" align="right"></img>
+			  
+			  <!--b style="text-align:center; font-size:20px; text-align:center;s"><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HR | Employee Details for&nbsp;<!--?php $cat=$row['empid'];
+              $query990 = mysql_query("select * from employees where id='$cat'");
+              $row001 = mysql_fetch_array($query990);
+              echo $row001['firstname'];
+              ?></h4></b></center-->
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">No:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="item_name" value="<?php echo $row['employee_id'];?>" placeholder="Job Title" readonly></div>
+												
+												       <label class="control-label col-sm-2" for="item_name">FirstName:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="qty" value="<?php echo $row['firstname'];?>" placeholder="Statuss"> </div>
+												
+												       <label class="control-label col-sm-2" for="item_name">FirstName:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="code2" value="<?php echo $row['firstname'];?>" placeholder="Education"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">MiddleName:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="brand_name" value="<?php echo $row['middlename'];?>" placeholder="Work Experience"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">MiddleName:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="price" value="<?php echo $row ['middlename'];?>" placeholder="MiddleName"> </div>
+												
+												
+																	       <label class="control-label col-sm-2" for="item_name">Reference #:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="ref_no" value="<?php echo $row ['ref_no'];?>" placeholder="Status"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">LastName:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="date_post" value="<?php echo $row ['lastname'];?> " placeholder="Salary"> </div>
+												
+												
+												
+												
+                                            <label class="control-label col-sm-2" for="item_code">Location:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="location" value="<?php echo $row ['location']; ?>" placeholder="Vacancy" required> </div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Category:</label>
+                                            <div class="col-sm-4">
+											
+											
+									<select id="types" class="form-control" name="type" > 
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryxxxx=mysql_query("select * from aa2000.item_category where category_id =1;") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxxxx)){
+        ?>
+        <option value="<?php echo $row['category_id'];?>"><?php echo $row['item_name'];?></option>
+		
+        <?php } ?>
+ 
+ 		
+</select>  
+												
+												
+												
+												
+												</div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Sub&nbsp;Category:</label>
+                                            <div class="col-sm-4">
+                                                 <select  class="form-control" id="inputEmail3" name="sub_category" required/>
+         <option value="<?php echo $subcat_id;?>"><?php echo $row14008['subcategory'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querybe=mysql_query("select * from aa2000.subcategory where Category=1") or die (mysql_error());
+        while($row=mysql_fetch_array($querybe)){
+        ?>
+        <option value="<?php echo $row['subcat_id'];?>"><?php echo $row['subcategory'];?></option>
+		
+        <?php } ?>
+		
+		
+		
+		
+		
+  </select>
+
+
+												</div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Unit&nbsp;of&nbsp;Measure:</label>
+                                            <div class="col-sm-4">
+                                            <select id="types" class="form-control" name="uom" required> 
+						  <!--option value="">..</option-->
+						  
+						   <option value="<?php echo $uom;?>"><?php echo $row7['uom'];?></option>
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryuom=mysql_query("select * from aa2000.uom") or die (mysql_error());
+        while($row=mysql_fetch_array($queryuom)){
+        ?>
+        <option value="<?php echo $row['uom_id'];?>"><?php echo $row['uom'];?></option>
+		
+        <?php } ?>
+ 
+
+</select>  	
+												
+												
+												
+												</div>
+                                        
+										
+										           <label class="control-label col-sm-2" for="item_code">SuppLier:</label>
+                                            <div class="col-sm-4">
+                                           <select  class="form-control" id="inputPassword3" name="supplier_id" required/>
+         <option value="<?php echo $supplier_id;?>"><?php echo $row57['supplier'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querysupplier=mysql_query("select * from aa2000.supplier") or die (mysql_error());
+        while($row=mysql_fetch_array($querysupplier)){
+        ?>
+        <option value="<?php echo $row['sup_id'];?>"><?php echo $row['supplier'];?></option>
+        <?php } ?>
+      </select>
+												
+												
+												
+												</div>
+                                        
+										
+										           <label class="control-label col-sm-2" for="item_code">Employee:</label>
+                                            <div class="col-sm-4">
+                                                                    <select  class="form-control" id="inputPassword3" name="emp" />
+       <option value="<?php echo $employee_id;?>"><?php echo $row9000['Name'];?></option-->
+        <?php
+		
+	include('connect.php');
+ $employee_ids=$employee_id;
+        $queryemployee=mysql_query("select * from aa2000.empleyado where employee_id='$employee_ids'") or die (mysql_error());
+        while($row=mysql_fetch_array($queryemployee)){
+        ?>
+        <option value="<?php echo $row['employee_id'];?>"><?php echo $row['Name'];?></option>
+        <?php } ?>
+      </select>
+												
+												
+												</div>
+                                        
+										
+										
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Added&nbsp;BY:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="Vacancy" value="<?php echo $_SESSION['sess_fname']; ?>&nbsp;<?php echo $_SESSION['sess_lastname'];?>" placeholder="Vacancy" required> </div>
+                                        
+										</div>
+										
+										
+						<b><center><emp class="btn btn-success" style="font-size:18px;border-radius:20px; padding-top:5px;width:850px;text-align:center;">F I X E D  &nbsp;&nbsp;&nbsp;&nbsp;A S S E T ' S  &nbsp;&nbsp;&nbsp;&nbsp; D E P R E C I A T I O N</emp></center>	</b>				
+										<br>
+										
+										      <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Method</label>
+    <div class="col-sm-10">
+    <select  class="form-control" id="inputPassword3" name="depmed" required/>
+         <option value="<?php echo $methodID;?>"><?php echo $row901['dep_method'];?></option>
+        <?php
+		include('connect.php');
+        $queryxx=mysql_query("select * from aa2000.dep_method") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxx)){
+        ?>
+        <option value="<?php echo $row['methodID'];?>"><?php echo $row['dep_method'];?></option>
+        <?php } ?>
+      </select>
+
+    </div>
+  </div>
+			<br>
+				<br>
+ <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Depreciation</label>
+    <div class="col-sm-10">
+      <input type="number" name="depreciation" class="form-control" value="0" readonly placeholder="Depreciation" id="inputPassword3" />
+    </div>
+  </div>
+
+
+
+
+  <br>
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Salvage Value</label>
+    <div class="col-sm-10">
+      <input type="text" name="sv" class="form-control" placeholder="Salvage Value" id="inputPassword3" readonly/>
+    </div>
+  </div>
+  <br>
+  
+ 
+
+  
+  
+
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Useful&nbsp;Life</label>
+    <div class="col-sm-10">
+      <input type="number"  name="years" class="form-control" value="<?php echo $row980['years'];?>"  placeholder="Useful Life" id="inputPassword3" required/>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+					
+										
+										
+										
+                                        <div class="form-group">
+                                   <!-- Dante -->
+                                        </div>
+                                    </div>
+									
+									
+						
+								
+							<br>	<br>	
+							<br>	<br>	
+									
+									
+                                    <div class="modal-footer">
+									
+									
+									  <!--a span class="glyphicon glyphicon-filxm"> <input class="btn btn-success glyphicon glyphicon-filxm" style="width:120px; height:36px; background-color:green; border-radius:20px;"  src="../item_images/<?php echo $item_image; ?>" type="file"name="item_image" accept="image/*" /></span> </a-->
+									
+									
+                                        <button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="update_posted"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+							
+						
+                        
+                    </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+							</form>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  </tr>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      <?php } ?>
+	  
+	  
+	  
+	  <?php
+	  if(isset($_POST['update_status'])){
+		$item_id = $_POST['item_id'];
+			$item_name = $_POST['item_name'];
+			$status = $_POST['status'];
+			
+			
+			$sql = "UPDATE tb_equipment SET status='$status' WHERE item_id='$item_id'";
+			echo '<script>window.location.href="viewassets.php"</script>';
+		  if ($conn->query($sql) === TRUE) {
+			  echo '<script>window.location.href="joblist.php"</script>';
+		  } else{
+			  // echo "Error updating record: ". $conn->error;
+			  
+		  }
+	  
+	  }
+	  ?>
+	  
+	  
+	  			<?php
+
+   //Update Items
+                        if(isset($_POST['update_item'])){
+                            $item_id = $_POST['item_id'];
+                            $item_name = $_POST['item_name'];
+                            $posted = $_POST['posted'];
+                            $item_category = $_POST['item_category'];
+                            $item_description = $_POST['item_description'];
+							$sended = $_POST['sended'];
+                            $sql = "UPDATE tb_equipment SET 
+                                posted='$posted' WHERE item_id='$item_id' ";
+								     echo '<script>window.location.href="viewassets.php"</script>';
+                            if ($conn->query($sql) === TRUE) {
+                                echo '<script>window.location.href="joblist.php"</script>';
+								  echo '<script>window.location.href="joblist.php"</script>';
+                            } else {
+                              //  echo "Error updating record: " . $conn->error;
+                            }
+                        }
+
+?>			
+			
+	 <?php
+if (isset($_POST['update_posted'])){	
+     $item_id=$_POST['item_id'];
+	$Jobtitle=$_POST['Jobtitle'];
+	$item_name=$_POST['item_name'];
+		$qty =$_POST['qty'];
+		$brand_name =$_POST['brand_name'];
+		$Education =$_POST['Education'];
+		$sub_category =$_POST['sub_category'];
+		$price =$_POST['price'];
+		$ref_no=$_POST['ref_no'];
+		$status=$_POST['status'];
+		$date_post=$_POST['date_post'];
+		$location=$_POST['location'];
+		$supplier_id=$_POST['supplier_id'];
+		$uom=$_POST['uom'];
+		$years=$_POST['years'];
+		$depmed=$_POST['depmed'];
+		
+				
+		$imgFile = $_FILES['item_image']['name']; //declaration of image File
+		$tmp_dir = $_FILES['item_image']['tmp_name'];  // dir of image
+		$imgSize = $_FILES['item_image']['size'];    // Image Size
+		
+			
+		
+
+			
+
+			
+			
+			
+		
+		$sql = "UPDATE tb_equipment SET
+		item_name='$item_name',qty='$qty',brand_name='$brand_name', price='$price', ref_no='$ref_no', date_post='$date_post', location='$location', sub_category='$sub_category', uom='$uom', supplier_id='$supplier_id', years='$years', depmed='$depmed' WHERE item_id='$item_id' ";
+		echo '<script>window.location.href="viewassets.php"</script>';
+		if ($conn->query($sql) === TRUE){
+			echo '<script>window.location.href="joblist.php"</script>';
+		}
+	
+		
+	
+}
+	?>  
+	  
+	  
+	  
+                                </tbody>
+                            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>   
+  </div>
+    
+  <?php include 'includes/footer.php'; ?>
+  <?php include 'includes/employee_modal.php'; ?>
+</div>
+<?php include 'includes/scripts.php'; ?>
+
+	  <script>
+            
+            var table = document.getElementById("example"), sumVal = 0;
+            
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[8].innerHTML);
+            }
+            
+            document.getElementById("val").innerHTML = "Sum Value = " + sumVal;
+            console.log(sumVal);
+            
+        </script>
+	  
+	  
+	  
+	  
+	  
+	  
+	  		
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+	  $('#example').dataTable();
+	});
+    </script>
+	  
+	  
+	  
+	  
+	  
+        <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/pace/pace.min.js"></script>
+        <script src="../js/lobipanel/lobipanel.min.js"></script>
+        <script src="../js/iscroll/iscroll.js"></script>
+        <script src="../js/prism/prism.js"></script>
+        <script src="../js/DataTables/datatables.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script>
+            $(function($) {
+                $('#example').DataTable();
+
+                $('#example2').DataTable( {
+                    "scrollY":        "300px",
+                    "scrollCollapse": true,
+                    "paging":         false
+                } );
+
+                $('#example3').DataTable();
+            });
+        </script>
+		 <script>
+   
+    $(document).ready(function() {
+        $('#logical').keypress(function (event) {
+            return isNumber(event, this)
+        });
+    });
+  
+    function isNumber(evt, element) {
+
+        var charCode = (evt.which) ? evt.which : event.keyCode
+
+        if (
+            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      
+            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      
+            (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }    
+</script-->
+		
+
+
+
+
+
+
+
+<script>
+$(function(){
+  $('.edit').click(function(e){
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $('.delete').click(function(e){
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $('.photo').click(function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+});
+
+
+function getRow(id){
+  $.ajax({
+    type: 'POST',
+    url: 'employee_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.empid').val(response.empid);
+      $('.employee_id').html(response.employee_id);
+	  	       // $('.photo').html(response.photo);
+	        $('#editx_employee_id').val(response.employee_id);
+      $('.del_employee_name').html(response.firstname+' '+response.lastname);
+	  $('#del_employee_photo').html(response.photo);
+      $('#employee_name').html(response.firstname+' '+response.lastname);
+      $('#edit_firstname').val(response.firstname);
+	  $('#edit_middlename').val(response.middlename);
+	  $('#edit_date_hired').val(response.date_hired);
+	  $('#edit_regular_date').val(response.regular_date);
+      $('#edit_lastname').val(response.lastname);
+	  $('#edit_sss_num').val(response.sss_num);
+	  $('#edit_tin_num').val(response.tin_num);
+	  $('#edit_tax_id').val(response.tax_id);
+	  $('#edit_philhealth_num').val(response.philhealth_num);
+	  $('#edit_hdmf_num').val(response.hdmf_num);
+	  $('#edit_hdmf_rtn_num').val(response.hdmf_rtn_num);
+	  $('#edit_salary_type').val(response.salary_type);
+	  $('#edit_salary_structure').val(response.salary_structure);
+	  $('#edit_salary_rate').val(response.salary_rate);
+	  $('#edit_type_of_worker').val(response.type_of_worker);
+	  $('#edit_permanent_address').val(response.permanent_address);
+	  $('#edit_civil_status').val(response.civil_status);
+      $('#edit_address').val(response.address);
+      $('#datepicker_edit').val(response.birthdate);
+      $('#edit_contact').val(response.contact_info);
+	  $('#edit_dept_section').val(response.dept_section);
+	  $('#edit_department').val(response.department);
+	  	  $('#date_hired').val(response.date_hired);
+	  $('#regular_date').val(response.regular_date);
+      $('#gender_val').val(response.gender).html(response.gender);
+      $('#position_val').val(response.position_id).html(response.description);
+      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    }
+  });
+}
+</script>
+</body>
+</html>

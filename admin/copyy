@@ -1,0 +1,1499 @@
+  
+	  
+		<div id='edit<?php echo $row ['item_id'];?>' class='modal fade' role='dialog'>
+                        <form method='post' class='form-horizontal' role='form'>
+                            <div class='modal-dialog modal-lg'>
+                           
+                                <div class='modal-content'>
+                                    <div class='modal-header'>
+                                    <div class='modal-header'>
+                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                        <h4 class='modal-title'><?php echo $row['Jobtitle'];?></h4>
+                                    </div>
+                                    <div class='modal-body'>
+                                        <input type='hidden' name='edit_item_id' value='dsd'>
+                                        
+										
+										
+										<div class='form-group'>
+                                            <!--label class='control-label col-sm-2' for='item_name' style='font-size:17px;'>Job&nbsp;Title:</label-->
+                                            <div class='col-sm-4'>	
+                                          <div style='font-size:15px;'><b>Job&nbsp;Title&nbsp;:&nbsp;</b><?php echo $row ['Jobtitle'];?></div></div>
+										   
+										   
+										   
+										   
+										   
+                                          
+													 
+												 
+													 
+													 
+													 
+                                        </div>
+										
+										
+										
+                                        <div>
+										
+										
+										  <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Job&nbsp;Description:</label-->
+                                            <div class='col-sm-12'>
+                                                     <div style='font-size:15px;'><b> Job Description&nbsp;:&nbsp;</b><?php echo $row ['Jobdescription'];?>"</div> </div>
+													 
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+									
+											
+											
+											
+											
+                                             
+                                        </div>
+										
+										
+										
+											
+                                                 <!--label class='control-label col-sm-2' for='item_name' style='font-size:17px;'>Vacancy:</label-->
+                                            <div class='col-sm-4'>	
+                                          <div style='font-size:15px;'><b>Vacancy&nbsp;:&nbsp;</b><?php echo $row ['Vacancy'];?></div></div>
+											
+											     <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;color:white;'>Educatioasan:</label-->
+                                            <!--div class='col-sm-4'>
+                                                     <div style='font-size:15px;color:white;'><?php echo $row ['Education'];?></div> </div-->
+										
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											   
+                                            <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Education:</label  -->
+                                            <div class='col-sm-12'>
+                                                     <div style='font-size:15px;'><b>Education&nbsp;:</b>&nbsp;<?php echo $row ['Education'];?></div> </div>
+										
+										
+												
+
+
+												
+                                            <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;color:white;'>Genderxx:</label>
+                                            <div class='col-sm-4'>
+                                                     <div style='font-size:17px;color:white;'>".$query2['Jobtitle']."</div> </div-->
+										
+										
+										
+													   
+                                            <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>WorkExperience:</label-->
+                                            <div class='col-sm-12'>
+                                                     <div style='font-size:17px;'><b>Work&nbsp;Experience&nbsp;:&nbsp;</b><?php echo $row ['WorkXP'];?></div> </div>
+										
+										
+										
+													   
+                                            <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px; color:white;'>WorkExperiencexxx
+</label>
+                                            <div class='col-sm-4'>
+                                                     <div style='font-size:17px; color:white;'>".$query2['WorkXP']."</div> </div-->
+										
+										
+										
+										
+										
+										                    <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Gender</label-->
+                                            <!--div class='col-sm-12'>
+                                                     <div style='font-size:17px;'><b>Gender&nbsp;:&nbsp;</b>&nbsp;<!--?php echo $row ['Gender'];?></div> 
+													
+													 
+													 </div-->
+													 
+										                    <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;color:white;'>Genderxx</label>
+                                            <div class='col-sm-4'>
+                                                     <div style='font-size:17px;color:white;'>".$query2['Gender']."</div> 
+													
+													 
+													 </div-->
+													 
+													 
+													 
+										                    <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Status</label-->
+                                            <div class='col-sm-12'>
+                                                     <emp style='font-size:17px;'><b>Status&nbsp:&nbsp;</b><?php echo $row ['status'];?></emp> 
+													
+													 
+													 </div>
+													 
+										                    <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;color:white;'>Statusxx</label>
+                                            <div class='col-sm-4'>
+                                                     <emp style='font-size:17px;color:white;'>".$query2['status']."</emp> 
+													
+													 
+													 </div-->
+													 
+													               <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Salary</label-->
+                                            <div class='col-sm-12'>
+                                                     <emp style='font-size:17px;'><b>Salary&nbsp;:&nbsp;</b><?php echo $row ['Salary'];?></emp> 
+													
+													 
+													 </div>
+													 
+													 
+													 		               <label class='control-label col-sm-2' for='item_code' style='font-size:17px;color:white;'>Salaryssax</label>
+                                            <div class='col-sm-4'>
+                                                     <emp style='font-size:17px; color:white;'>".$query2['Salary']."</emp> 
+													
+													 
+													 </div>
+										
+												               <!--label class='control-label col-sm-2' for='item_code' style='font-size:17px;'>Required&nbsp;Skills</label-->
+                                            <div class='col-sm-12'>
+                                                     <emp style='font-size:17px;'><b>Required&nbsp;Skills&nbsp;:&nbsp;</b><?php echo $row ['skills'];?></emp> 
+													
+													 
+													 </div>
+										
+										
+                                    </div>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+							
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+                                    <div class='modal-footer'>
+                                        <button type='submit' class='btn btn-primary' name='update_items' style='display:none;'><span class='glyphicon glyphicon-edit'></span> Edit</button>
+						
+                                      
+										<a data-toggle='modal' data-target='#uploadModalsamplexmemosuperjeje' style='display:none;' data-toggle='modal'class='btn btn-primary'>Apply Now</a>
+										
+										
+                                        <button type='button' class='btn btn-danger' data-dismiss='modal'><span class='glyphicon glyphicon-remove-circle'></span> Close</button>
+                                    </div>
+									
+									
+									
+									
+                                </div>
+                        
+                        </form>
+						
+                    </div>
+					</div>
+					</div>
+					
+		
+			<!--Edit Item Modal -->
+                    <div id="post<?php echo $row ['item_id'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><img src="../item_images/<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['item_image'];
+              ?>" height="70" width="105" class="zoom" style="border-radius:20px;"></img></center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post for Depreciation&nbsp;<emp style="background-color:skyblue; border-radius:20px;"><?php echo $row ['item_name'];?></emp></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Posted:</label>
+                                            <div class="col-sm-4">
+                                                <!--input type="text" class="form-control" id="sended" name="posted" value="posted" placeholder="Sended" readonly--> 
+												<select name="posted" class="form-control">
+  <option value="ondep">On Depreciation</option>
+  <option value="nondep">Non Depreciation</option>
+</select>
+												
+												
+												
+												
+												
+												
+												</div>
+                                            <label class="control-label col-sm-2" for="item_code">Description:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['item_name']; ?>" placeholder="Item Code" required> </div>
+												
+												   <label class="control-label col-sm-2" for="item_code">Price:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['price']; ?>" placeholder="Item Code" required> </div>
+												
+												
+														   <label class="control-label col-sm-2" for="item_code">User Intended:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_csode" value="<?php include('connect.php');
+            $cat=$row['employee_id'];
+            $query7 = mysql_query("select * from empleyado where employee_id='$cat'") or die(mysql_error());
+            $row7 = mysql_fetch_array($query7);
+            echo $row7['Name'];
+            ?>" placeholder="Itesm Code" required> </div>
+												
+												
+												
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_description">Image&nbsp;SampLe:</label>
+                                            <div class="col-sm-4">
+                                           <center> <img src="../item_images/<?php echo $row['item_image'];?>" class="img img-rounded"  width="255" height="173" /></center>
+                                            </div>
+                                            <label class="control-label col-sm-2" for="item_category">Other&nbsp;Remarks:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Skills" name="Skills" placeholder="Skills" style="width:100%;" readonly><?php echo $row ['skills'];?></textarea> </div>
+                                        </div>
+                                    </div>
+									
+									
+										<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>
+												<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>	
+									
+									
+									
+                                    <div class="modal-footer">
+									
+					    <button type="submit" class="btn btn-indfo" name="update_itemghg" style="text-align:center;width:650px; border-radius:20px;"><span class="glyphicon glyphicon-key"></span> <?php echo $row['posted'];?></button>
+                                        <button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="update_item"><span class="glyphicon glyphicon-edit"></span> Post</button>
+										
+										
+										
+										
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+							
+						
+                        </form>
+                    </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+			<!--Edit Item Modal -->
+                    <div id="depreciation<?php echo $row ['item_id'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><img src="../item_images/<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['item_image'];
+              ?>" height="70" width="105" class="zoom" style="border-radius:20px;"></img></center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depreciation for the Item&nbsp;<emp style="background-color:skyblue; border-radius:20px; font-family:arial;"><?php echo $row ['item_name'];?></emp></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Item Status:</label>
+                                            <div class="col-sm-4">
+                                                <!--input type="text" class="form-control" id="sended" name="posted" value="posted" placeholder="Sended" readonly--> 
+												<select name="status" class="form-control">
+  <option value="Dispossal">Dispossal</option>
+  <option value="Good">Good</option>
+</select>
+												
+												
+												
+												
+												
+												
+												</div>
+                                            <label class="control-label col-sm-2" for="item_code">Description:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['item_name']; ?>" placeholder="Item Code" required> </div>
+												
+												   <label class="control-label col-sm-2" for="item_code">Price:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['price']; ?> @ <?php echo $row['date_post'];?>" placeholder="Item Code" required> </div>
+												
+												
+														   <label class="control-label col-sm-2" for="item_code">User Intended:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_csode" value="<?php include('connect.php');
+            $cat=$row['employee_id'];
+            $query7 = mysql_query("select * from empleyado where employee_id='$cat'") or die(mysql_error());
+            $row7 = mysql_fetch_array($query7);
+            echo $row7['Name'];
+            ?>" placeholder="Itesm Code" required> </div>
+												
+												
+												
+                                        </div>
+                                 
+								 
+								 <!-- akin sinta  -->
+								 
+								 
+
+  <h4 class="btn btn-primary" style="font-size:18px; color:white; width:865px; border-radius:20px;">Asset's Depreciation</h4>
+		  <!--h4 class="btn btn-primary" style="font-size:18px; color:white; width:785px; border-radius:20px;">Depreciation ScheduLe</h4-->
+
+								 <br>
+								 		 <br>
+										 <?php
+										 $dp=$row['item_id'];
+$query27=mysql_query("select * from tb_equipment where item_id='$dp'") or die (mysql_error());
+$row27=mysql_fetch_array($query2);
+$depmed=$row27['depmed'];
+
+?>
+										 <form>
+					<fieldset>	
+<legend></legend>					
+							       <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label" style="font-family:Verdana, Geneva, sans-serif;">Depreciation Method</label>	 
+								 
+			  <div class="col-sm-10">
+    <select  class="form-control" id="inputPassword3" name="method" required/>
+       <?php
+	   include('connect.php');
+	   $depmeds=$row['depmed'];
+        $queryi=mysql_query("select * from dep_method where methodID='$depmeds'") or die (mysql_error());
+        $row=mysql_fetch_array($queryi);
+        ?>
+         <option value="<?php echo $row['methodID'];?>"><?php echo $row['dep_method'];?></option>
+     
+          <?php
+		  include('conface.php');
+        $queryi=mysql_query("select * from dep_method") or die (mysql_error());
+        while($row=mysql_fetch_array($queryi)){
+        ?>
+        <option value="<?php echo $row['methodID'];?>"><?php echo $row['dep_method'];?></option>
+        <?php } ?>
+      </select>					 
+			</div>					 
+						</div>				 
+								 
+						<br>		
+	<br>	
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label" style="font-family:Verdana, Geneva, sans-serif;">Salvage Value</label>
+    <div class="col-sm-10">
+      <input type="text" readonly name="sv" value="<?php echo $salvage_val;?>" class="form-control" id="inputPassword3">
+    </div>
+ 
+<br>
+<br>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label" style="font-family:Verdana, Geneva, sans-serif;">Useful Life</label>
+    <div class="col-sm-10">
+      <input type="text"  name="years"  value="<?php
+	   include('connect.php');
+	   $depmeds=$row['depmed'];
+        $queryi=mysql_query("select * from tb_equipment where item_id='$id'") or die (mysql_error());
+        $row=mysql_fetch_array($queryi);
+		echo $row['years'];
+        ?>" class="form-control" id="inputPassword3" required/>
+    </div>
+  </div>
+									
+</fieldset>
+	</form>							
+		<hr>						 
+								 
+		 <h4 class="btn btn-primary" style="font-size:18px; color:white; width:865px; border-radius:20px;">Depreciation ScheduLe</h4>						 
+                           	<br>	 
+							<br>		
+						<?php
+include('conface.php');
+$rr=$row['depmed'];
+$query2=mysql_query("select * from tb_equipment where item_id='$id'") or die (mysql_error());
+$row2=mysql_fetch_array($query2);
+$depmed=$row['depmed'];
+$years=$row['years'];
+if($depmed=='1'){
+?>			
+			
+<center><emp class="btn btn-success" style="width:380px; font-size:19px;"> Years  </emp><emp class="btn btn-success" style="width:420px; font-size:19px;"> Straight Line Depreciation </emp></center>
+			
+
+        <?php 
+		  
+		  	$tanga=12;
+	//$final=$years/$laarnie;
+	$final=$years/12;
+	
+for ($x=1; $x<=$final; $x++)
+  {
+    $depval=$price-$sv;
+
+    $annualdep=$depval/$years;
+  echo'<emp>';
+      echo '<b><center> <h4 class="btn btn-infox" style="font-size:18px; color:black;; width:375px;border-radiuss:20px;">'.$x.'</h4> <emp class="btn btn-dangerxxx" style="width:415px;border-radsius:20px;">'.formatMoney($annualdep,true);'</emp></center></b>';
+   // echo '<b><center>'.formatMoney($annualdep,true);'</center></b>';
+  echo'</emp>';
+    } ?>	
+
+<?php
+
+}
+
+
+else{
+?>
+	<center><emp class="btn btn-success" style="width:380px; font-size:19px;"> Years  </emp><emp class="btn btn-success" style="width:420px; font-size:19px;"> Double DecLining Balance </emp></center>	
+	
+	
+	 <?php 
+  $deprate=((100/$years)*2);
+    $annualdep=($price*$deprate)/100;
+$depval=$row['price'];
+$yearsko=$row['years']/12;
+for ($x=1; $x<=$yearsko; $x++)
+  {
+    $annualdep=(($depval*$deprate)/100);
+                          echo '<emp>';
+                           echo '<b><center><h4 class="btn btn-infso" style="font-size:18px; color:black; width:255px;border-radiuss:20px;">'.$x.'</h4>'.formatMoney($annualdep=$annualdep,true);'></center></b>';
+ 
+    $depval=$depval-$annualdep2;
+        } 
+  
+  echo'</emp>';
+  
+  ?>
+  <?php
+  
+}
+?>
+	
+								
+						
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>	
+									
+									
+									
+                                    <div class="modal-footer">
+									
+				
+										
+										
+										
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Close</button>
+                                    </div>
+                                </div>
+                            </div>
+							     </div>
+	  
+						
+                        </form>
+                    </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+			<!--Edit Item Modal -->
+                    <div id="dispossal<?php echo $row ['item_id'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><img src="../item_images/<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['item_image'];
+              ?>" height="70" width="105" class="zoom" style="border-radius:20px;"></img></center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed Asset's Dispossal for the Item&nbsp;<emp style="background-color:skyblue; border-radius:20px;"><?php echo $row ['item_name'];?></emp></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Item Status:</label>
+                                            <div class="col-sm-4">
+                                                <!--input type="text" class="form-control" id="sended" name="posted" value="posted" placeholder="Sended" readonly--> 
+												<select name="status" class="form-control">
+  <option value="Dispossal">Dispossal</option>
+  <option value="Good">Good</option>
+</select>
+												
+												
+												
+												
+												
+												
+												</div>
+                                            <label class="control-label col-sm-2" for="item_code">Description:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['item_name']; ?>" placeholder="Item Code" required> </div>
+												
+												   <label class="control-label col-sm-2" for="item_code">Price:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_code" value="<?php echo $row ['price']; ?> @ <?php echo $row['date_post'];?>" placeholder="Item Code" required> </div>
+												
+												
+														   <label class="control-label col-sm-2" for="item_code">User Intended:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" readonly class="form-control" id="item_code" name="item_csode" value="<?php include('connect.php');
+            $cat=$row['employee_id'];
+            $query7 = mysql_query("select * from empleyado where employee_id='$cat'") or die(mysql_error());
+            $row7 = mysql_fetch_array($query7);
+            echo $row7['Name'];
+            ?>" placeholder="Itesm Code" required> </div>
+												
+												
+												
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_description">Image&nbsp;SampLe:</label>
+                                            <div class="col-sm-4">
+                                           <center> <img src="../item_images/<?php echo $row['item_image'];?>" class="img img-rounded"  width="255" height="173" /></center>
+                                            </div>
+                                            <label class="control-label col-sm-2" for="item_category">Other&nbsp;Remarks:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Skills" name="Skills" placeholder="Put Some Remarks Here.." style="width:100%;"><?php echo $row ['skills'];?></textarea> </div>
+                                        </div>
+                                    </div>
+									
+									
+										<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>
+												<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>	
+									
+									
+									
+                                    <div class="modal-footer">
+									
+					    <button type="submit" class="btn btn-success" name="update_itemghg" style="text-align:center;width:500px; border-radius:20px;"><span class="glyphicon glyphicon-key"></span> <?php echo $row['status'];?></button>
+                                        <button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="update_status"><span class="glyphicon glyphicon-edit"></span> Update Dispossal Entry</button>
+										
+										
+										
+										
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+							
+						
+                        </form>
+                    </div>
+	  
+	  	  	
+	 <?php
+            $cat=$row['uom'];
+            $query7 = mysql_query("select * from uom where uom_id='$cat'") or die(mysql_error());
+            $row7 = mysql_fetch_array($query7);
+        
+            ?>
+			<?php 
+			$sub_cats=$row['sub_category'];
+			$querybelsx = mysql_query("select * from subcategory where subcat_id='$sub_cats'") or die(mysql_error());
+			$row14008 = mysql_fetch_array($querybelsx);
+			
+			?>
+			
+			
+			
+			<?php 
+			$suppliers=$row['supplier_id'];
+			$querynew=mysql_query("select * from supplier where sup_id='$suppliers'") or die(mysql_error());
+			$row57 = mysql_fetch_array($querynew);
+			
+			?>
+			
+
+<?php 
+$themethodspo=$row['depmed'];
+$querymethodx = mysql_query("select * from dep_method where methodID='$themethodspo'") or die(mysql_error());
+$row901 = mysql_fetch_array($querymethodx);
+?>
+	
+
+<?php 
+$themethods=$row['employee_id'];
+$querymethodx = mysql_query("select * from empleyado where employee_id='$themethods'") or die(mysql_error());
+$row9000 = mysql_fetch_array($querymethodx);
+?>	
+
+<?php 
+$upper=$_GET['id'];
+$queryme = mysql_query("select * from tb_equipment where item_category='$upper'") or die(mysql_error());
+$row980 = mysql_fetch_array($queryme);
+?>	 
+	  
+	  
+	  
+	  
+	  
+	  
+	  <!--Edit Item Modal -->
+                    <div id="update<?php echo $row ['item_id'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      
+									     <h4 class="modal-title"><img src="../item_images/<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['item_image'];
+              ?>" height="70" width="105" class="zoom"></img></center><img src="../item_images/GerardSS.jpg" height="70" width="105" align="right"></img>
+			  
+			  <b style="text-align:center; font-size:20px; text-align:center;s"><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update Fixed Asset Data for&nbsp;<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['Name'];
+              ?></h4></b></center>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Description:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="item_name" value="<?php echo $row['item_name'];?>" placeholder="Job Title"></div>
+												
+												       <label class="control-label col-sm-2" for="item_name">Quantity:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="qty" value="<?php echo $row['qty'];?>" placeholder="Statuss"> </div>
+												
+												       <label class="control-label col-sm-2" for="item_name">Item&nbsp;Code:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="code2" value="<?php echo $row['code2'];?>" placeholder="Education"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Brand:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="brand_name" value="<?php echo $row['brand_name'];?>" placeholder="Work Experience"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Price:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="price" value="<?php echo $row ['price'];?>" placeholder="Gender"> </div>
+												
+												
+																	       <label class="control-label col-sm-2" for="item_name">Reference #:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="ref_no" value="<?php echo $row ['ref_no'];?>" placeholder="Status"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Acquisition&nbsp;Date:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="date_post" value="<?php echo $row ['date_post'];?> " placeholder="Salary"> </div>
+												
+												
+												
+												
+                                            <label class="control-label col-sm-2" for="item_code">Location:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="location" value="<?php echo $row ['location']; ?>" placeholder="Vacancy" required> </div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Category:</label>
+                                            <div class="col-sm-4">
+											
+											
+									<select id="types" class="form-control" name="type" > 
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryxxxx=mysql_query("select * from item_category where category_id =1;") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxxxx)){
+        ?>
+        <option value="<?php echo $row['category_id'];?>"><?php echo $row['item_name'];?></option>
+		
+        <?php } ?>
+ 
+ 		
+</select>  
+												
+												
+												
+												
+												</div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Sub&nbsp;Category:</label>
+                                            <div class="col-sm-4">
+                                                 <select  class="form-control" id="inputEmail3" name="sub_category" required/>
+         <option value="<?php echo $subcat_id;?>"><?php echo $row14008['subcategory'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querybe=mysql_query("select * from subcategory where Category=1") or die (mysql_error());
+        while($row=mysql_fetch_array($querybe)){
+        ?>
+        <option value="<?php echo $row['subcat_id'];?>"><?php echo $row['subcategory'];?></option>
+		
+        <?php } ?>
+		
+		
+		
+		
+		
+  </select>
+
+
+												</div>
+                                        
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Unit&nbsp;of&nbsp;Measure:</label>
+                                            <div class="col-sm-4">
+                                            <select id="types" class="form-control" name="uom" required> 
+						  <!--option value="">..</option-->
+						  
+						   <option value="<?php echo $uom;?>"><?php echo $row7['uom'];?></option>
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryuom=mysql_query("select * from uom") or die (mysql_error());
+        while($row=mysql_fetch_array($queryuom)){
+        ?>
+        <option value="<?php echo $row['uom_id'];?>"><?php echo $row['uom'];?></option>
+		
+        <?php } ?>
+ 
+
+</select>  	
+												
+												
+												
+												</div>
+                                        
+										
+										           <label class="control-label col-sm-2" for="item_code">SuppLier:</label>
+                                            <div class="col-sm-4">
+                                           <select  class="form-control" id="inputPassword3" name="supplier_id" required/>
+         <option value="<?php echo $supplier_id;?>"><?php echo $row57['supplier'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querysupplier=mysql_query("select * from supplier") or die (mysql_error());
+        while($row=mysql_fetch_array($querysupplier)){
+        ?>
+        <option value="<?php echo $row['sup_id'];?>"><?php echo $row['supplier'];?></option>
+        <?php } ?>
+      </select>
+												
+												
+												
+												</div>
+                                        
+										
+										           <label class="control-label col-sm-2" for="item_code">Employee:</label>
+                                            <div class="col-sm-4">
+                                                                    <select  class="form-control" id="inputPassword3" name="emp" />
+       <option value="<?php echo $employee_id;?>"><?php echo $row9000['Name'];?></option-->
+        <?php
+		
+	include('connect.php');
+ $employee_ids=$employee_id;
+        $queryemployee=mysql_query("select * from empleyado where employee_id='$employee_ids'") or die (mysql_error());
+        while($row=mysql_fetch_array($queryemployee)){
+        ?>
+        <option value="<?php echo $row['employee_id'];?>"><?php echo $row['Name'];?></option>
+        <?php } ?>
+      </select>
+												
+												
+												</div>
+                                        
+										
+										
+										
+										
+										           <label class="control-label col-sm-2" for="item_code">Added&nbsp;BY:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="Vacancy" value="<?php echo $_SESSION['sess_fname']; ?>&nbsp;<?php echo $_SESSION['sess_lastname'];?>" placeholder="Vacancy" required> </div>
+                                        
+										</div>
+										
+										
+						<b><center><emp class="btn btn-success" style="font-size:18px;border-radius:20px; padding-top:5px;width:850px;text-align:center;">F I X E D  &nbsp;&nbsp;&nbsp;&nbsp;A S S E T ' S  &nbsp;&nbsp;&nbsp;&nbsp; D E P R E C I A T I O N</emp></center>	</b>				
+										<br>
+										
+										      <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Method</label>
+    <div class="col-sm-10">
+    <select  class="form-control" id="inputPassword3" name="depmed" required/>
+         <option value="<?php echo $methodID;?>"><?php echo $row901['dep_method'];?></option>
+        <?php
+		include('connect.php');
+        $queryxx=mysql_query("select * from dep_method") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxx)){
+        ?>
+        <option value="<?php echo $row['methodID'];?>"><?php echo $row['dep_method'];?></option>
+        <?php } ?>
+      </select>
+
+    </div>
+  </div>
+			<br>
+				<br>
+ <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Depreciation</label>
+    <div class="col-sm-10">
+      <input type="number" name="depreciation" class="form-control" value="0" readonly placeholder="Depreciation" id="inputPassword3" />
+    </div>
+  </div>
+
+
+
+
+  <br>
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Salvage Value</label>
+    <div class="col-sm-10">
+      <input type="text" name="sv" class="form-control" placeholder="Salvage Value" id="inputPassword3" readonly/>
+    </div>
+  </div>
+  <br>
+  
+ 
+
+  
+  
+
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Useful&nbsp;Life</label>
+    <div class="col-sm-10">
+      <input type="number"  name="years" class="form-control" value="<?php echo $row980['years'];?>"  placeholder="Useful Life" id="inputPassword3" required/>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+					
+										
+										
+										
+                                        <div class="form-group">
+                                   <!-- Dante -->
+                                        </div>
+                                    </div>
+									
+									
+						
+								
+							<br>	<br>	
+							<br>	<br>	
+									
+									
+                                    <div class="modal-footer">
+									
+									
+									  <!--a span class="glyphicon glyphicon-filxm"> <input class="btn btn-success glyphicon glyphicon-filxm" style="width:120px; height:36px; background-color:green; border-radius:20px;"  src="../item_images/<?php echo $item_image; ?>" type="file"name="item_image" accept="image/*" /></span> </a-->
+									
+									
+                                        <button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="update_posted"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+							
+						
+                        </form>
+                    </div>
+	  
+	  
+	  
+	  
+	  
+ 
+	  
+	  <!--Edit Item Modal -->
+                    <div id="updatex<?php echo $row ['code2primary'];?>" class="modal fade" role="dialog">
+                        <form method="post" class="form-horizontal" role="form">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Post&nbsp;<?php echo $row ['Jobtitle'];?></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="item_id" value="<?php echo $row ['item_id']; ?>">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Job&nbsp;Title:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="Jobtitle" value="<?php echo $row['Jobtitle'];?>" placeholder="Job Title"></div>
+												
+												       <label class="control-label col-sm-2" for="item_name">Status:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="status" value="<?php echo $row['status'];?>" placeholder="Statuss"> </div>
+												
+												       <label class="control-label col-sm-2" for="item_name">Education:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="Education" value="<?php echo $row['Education'];?>" placeholder="Education"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Work&nbsp;Experience:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="WorkXP" value="<?php echo $row['WorkXP'];?>" placeholder="Work Experience"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Gender:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="Gender" value="<?php echo $row ['Gender'];?>" placeholder="Gender"> </div>
+												
+												
+																	       <label class="control-label col-sm-2" for="item_name">Status:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="status" value="<?php echo $row ['status'];?>" placeholder="Status"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Salary:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="Salary" value="<?php echo $row ['Salary'];?> " placeholder="Salary"> </div>
+												
+												
+												
+												
+                                            <label class="control-label col-sm-2" for="item_code">Vacancy:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="Vacancy" value="<?php echo $row ['Vacancy']; ?>" placeholder="Vacancy" required> </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_description">Job&nbsp;Description:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Jobdescription" name="Jobdescription" placeholder="Job Description" required style="width: 100%;">
+                                                            <?php echo $row ['Jobdescription']; ?>
+                                                        </textarea>
+                                            </div>
+                                            <label class="control-label col-sm-2" for="item_category">Skill:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Skills" name="skills"placeholder="Skills" style="width:100%;"><?php echo $row ['skills'];?></textarea> </div>
+                                        </div>
+                                    </div>
+									
+									
+										<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>
+												<br>
+								
+							<br>
+								
+							<br>	<br>
+								
+							<br>
+								
+							<br>	
+								<br>
+								
+							<br>	<br>	
+							<br>	<br>	
+									
+									
+                                    <div class="modal-footer">
+                                        <button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="update_posteds"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+							
+						
+                        </form>
+                    </div>
+	  
+	  
+	  
+	  
+	  	
+	 <?php
+            $cat=$row['uom'];
+            $query7 = mysql_query("select * from uom where uom_id='$cat'") or die(mysql_error());
+            $row7 = mysql_fetch_array($query7);
+        
+            ?>
+			<?php 
+			$sub_cats=$row['sub_cat'];
+			$querybels = mysql_query("select * from subcategory where Category='1'") or die(mysql_error());
+			$row1400 = mysql_fetch_array($querybels);
+			
+			?>
+			
+			
+			
+			<?php 
+			$suppliers=$row['supplier_id'];
+			$querynew=mysql_query("select * from supplier where sup_id='$suppliers'") or die(mysql_error());
+			$row57 = mysql_fetch_array($querynew);
+			
+			?>
+			
+
+<?php 
+$themethods=$row['depmed'];
+$querymethod = mysql_query("select * from dep_method where methodID='$themethods'") or die(mysql_error());
+$row90m = mysql_fetch_array($querymethod);
+?>
+	
+
+<?php 
+$themethods=$row['employee_id'];
+$querymethodx = mysql_query("select * from empleyado where employee_id='$themethods'") or die(mysql_error());
+$row9000 = mysql_fetch_array($querymethodx);
+?>	
+
+<?php 
+$upper=$_GET['id'];
+$queryme = mysql_query("select * from tb_equipment where item_category='$upper'") or die(mysql_error());
+$row900 = mysql_fetch_array($queryme);
+?>	 
+	    <!-- this is for the onnec -->
+		
+
+
+	  <!--Edit Item Modal -->
+                    <div id="updated<?php echo $row['code2primary'];?>" class="modal fade" role="dialog">
+                        <!--form method="post" class="form-horizontal" role="form"-->
+                            <div class="modal-dialog modal-lg" style="width:1510px;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" >
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><img src="../item_images/<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['item_image'];
+              ?>" height="70" width="105" class="zoom"></img></center><img src="../item_images/GerardSS.jpg" height="70" width="105" align="right"></img>
+			  
+			  <b style="text-align:center; font-size:20px;"><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update Fixed Asset Data for&nbsp;<?php $cat=$row['employee_id'];
+              $query99 = mysql_query("select * from empleyado where employee_id='$cat'");
+              $row00 = mysql_fetch_array($query99);
+              echo $row00['Name'];
+              ?></h4></b></center>
+                                    </div>
+									
+								
+                                    <div class="modal-body">
+							 <form class="form-horizontal" method="post" role="form">
+									
+                                        <input type="hidden" name="main_id" value="<?php echo $row ['main_id']; ?>">
+										
+								
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="item_name">Description&nbsp;:</label>
+                                          
+
+										  <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="item_name" required value="<?php echo $row['item_name'];?>" placeholder="Put Description here..." autofocus></div>
+												
+												
+
+												
+												       <label class="control-label col-sm-2" for="item_name">Quantity&nbsp;:</label>
+                                            <div class="col-sm-4">
+											
+                                                <input type="text" class="form-control" placeholder="Quantity" required id="sended" name="qty" value="<?php echo $row['qty'];?>"> 
+												
+												
+												
+												
+												
+</div>
+											
+											
+										
+											
+											
+											</div>
+									
+											
+											<div>
+										
+<!--                 3 -->
+
+<?php 
+
+include(connect.php);
+
+$sql ="SELECT * from aa2000.tb_equipment where item_category=1; ";
+$queryko = $dbh -> prepare($sql);
+$queryko->execute();
+$results=$queryko->fetchAll(PDO::FETCH_OBJ);
+$totalsubjectsx=$queryko->rowCount();
+?>
+   <div class="col-sm-10" style="display:none;">
+      <input type="text" name="item_code" class="form-control" value="OME-000<?php echo ($totalsubjectsx)+1;?>" id="inputPassword3" required/>
+    </div>
+			
+
+  <div class="col-sm-10" style="display:none;">
+      <input type="text" name="item_codex" class="form-control" value="OME-000<?php echo ($totalsubjectsx)+1;?>" id="inputPassword3" required/>
+    </div>
+								
+												
+											
+				<div class="col-sm-10" style="display:none;">
+      <input type="text" name="date_added" class="form-control" value="<?php echo date("Y-m-d H:i:s");?>" id="inputPassword3" required/>
+    </div>
+													
+												
+												
+												
+												
+												
+												
+												       <label class="control-label col-sm-2" for="item_name">Item&nbsp;Code&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="code2" readonly value="<?php echo $row['code2'];?>">
+                    </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Brand&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" required name="brand" value="<?php echo $row['brand_name'];?>"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Price&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" autofocus id="sended" required name="price" value="<?php echo $row ['price'];?>" placeholder="Price"> </div>
+												
+												
+																	       <label class="control-label col-sm-2" for="item_name">Reference #&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="sended" name="ref_no" required value="<?php echo $row ['ref_no'];?>" placeholder="Reference #"> </div>
+												
+												
+													       <label class="control-label col-sm-2" for="item_name">Acquisition&nbsp;Date&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="date" class="form-control" id="sended" required name="date_post" value="<?php echo $row ['date_post'];?>" placeholder="A"> </div>
+												
+												
+												
+												
+                                            <label class="control-label col-sm-2" for="item_code">Location&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" name="location" value="<?php echo $row ['location']; ?>" placeholder="Location" required> </div>
+                                        </div>
+										
+												<div>
+                                            <label class="control-label col-sm-2" for="item_code">Category&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                             <select id="types" class="form-control" name="type" > 
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryxxxx=mysql_query("select * from item_category where category_id =1;") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxxxx)){
+        ?>
+        <option value="<?php echo $row['category_id'];?>"><?php echo $row['item_name'];?></option>
+		
+        <?php } ?>
+ 
+ 		
+ <!--option value="Type 1">Type 1</option>   
+ <option value="Type 2">Type 2</option>   
+ <option value="typo">Type 3</option>   
+ <option value="Other">Other</option-->   
+</select>  
+												
+												
+												</div>
+                                        </div>
+										
+										<div>
+										       <label class="control-label col-sm-2" for="item_code">Sub&nbsp;Category&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                   <select  class="form-control" id="inputEmail3" name="sub_category" required/>
+         <option value="<?php echo $subcat_id;?>"><?php echo $row['subcategory'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querybe=mysql_query("select * from subcategory where Category=1") or die (mysql_error());
+        while($row=mysql_fetch_array($querybe)){
+        ?>
+        <option value="<?php echo $row['subcat_id'];?>"><?php echo $row['subcategory'];?></option>
+		
+        <?php } ?>
+		
+		
+		
+		
+		
+  </select>
+												
+												
+												</div>
+                                        </div>
+										
+										
+										
+										<div>
+										       <label class="control-label col-sm-2" for="item_code">Unit of Measure&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                              <select id="types" class="form-control" name="uom" > 
+						  <!--option value="">..</option-->
+						  
+						   <option value="<?php echo $uom;?>"><?php echo $row7['uom'];?></option>
+						   <!--option value="blankall">...</option-->
+ <?php
+			include('connect.php');
+		
+        $queryuom=mysql_query("select * from uom") or die (mysql_error());
+        while($row=mysql_fetch_array($queryuom)){
+        ?>
+        <option value="<?php echo $row['uom_id'];?>"><?php echo $row['uom'];?></option>
+		
+        <?php } ?>
+ 
+
+</select>  	
+												
+												
+												</div>
+                                        </div>	
+										
+											<div>
+										       <label class="control-label col-sm-2" for="item_code">SuppLier&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                     <select  class="form-control" id="inputPassword3" name="supp" required/>
+         <option value="<?php echo $supplier_id;?>"><?php echo $row57['supplier'];?></option>
+        <?php
+			include('connect.php');
+		
+        $querysupplier=mysql_query("select * from supplier") or die (mysql_error());
+        while($row=mysql_fetch_array($querysupplier)){
+        ?>
+        <option value="<?php echo $row['sup_id'];?>"><?php echo $row['supplier'];?></option>
+        <?php } ?>
+      </select>
+												
+												
+												</div>
+                                        </div>	
+											
+											
+										<div>
+										       <label class="control-label col-sm-2" for="item_code">Employee&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                   <select  class="form-control" id="inputPassword3" name="emp" />
+       <option value="<?php echo $employee_id;?>"><?php echo $row9000['Name'];?></option-->
+        <?php
+		
+	include('connect.php');
+ $employee_ids=$employee_id;
+        $queryemployee=mysql_query("select * from empleyado where employee_id='$employee_ids'") or die (mysql_error());
+        while($row=mysql_fetch_array($queryemployee)){
+        ?>
+        <option value="<?php echo $row['employee_id'];?>"><?php echo $row['Name'];?></option>
+        <?php } ?>
+      </select>
+
+
+
+
+												</div>
+                                        </div>		
+										
+										
+												<div>
+										       <label class="control-label col-sm-2" for="item_code">Added&nbsp;By&nbsp;:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="item_code" readonly name="m10" value="<?php echo $_SESSION['sess_fname']; ?> <?php echo $_SESSION['sess_lastname'];?>" placeholder="Stock for Next Month" required> </div>
+                                        </div>		
+										
+										
+										
+										<br>
+										<br>
+		<b><center><emp class="btn btn-info" style="font-size:17px;border-radius:20px; padding-top:5px;width:1358px;text-align:center;"><i> F I X E D  &nbsp;&nbsp;&nbsp;&nbsp;A S S E T ' S  &nbsp;&nbsp;&nbsp;&nbsp; D E P R E C I A T I O N</i></emp></center>	</b>
+										
+									
+										<br>
+										
+					
+	  
+	  			
+				
+
+							
+  <fieldset style="color:black;">
+          <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Method</label>
+    <div class="col-sm-10">
+    <select  class="form-control" id="inputPassword3" name="method" required/>
+         <option value=<?php echo $dep_method;?>"><?php echo $row90['dep_method'];?></option>
+        <?php
+		include('connect.php');
+        $queryxx=mysql_query("select * from dep_method") or die (mysql_error());
+        while($row=mysql_fetch_array($queryxx)){
+        ?>
+        <option value="<?php echo $row['methodID'];?>"><?php echo $row['dep_method'];?></option>
+        <?php } ?>
+      </select>
+
+    </div>
+  </div>
+<br>
+<div class="col-sm-10" style="display:none;">
+      <input type="text" name="idm" class="form-control" value="OME-000<?php echo ($totalsubjectsx)+1;?>" id="inputPassword3" required/>
+    </div>
+			
+
+<br>
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Depreciation</label>
+    <div class="col-sm-10">
+      <input type="number" name="depreciation" class="form-control" value="0" readonly placeholder="Depreciation" id="inputPassword3" />
+    </div>
+  </div>
+
+
+
+
+  <br>
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Salvage Value</label>
+    <div class="col-sm-10">
+      <input type="text" name="sv" class="form-control" placeholder="Salvage Value" id="inputPassword3" readonly/>
+    </div>
+  </div>
+  <br>
+  
+ 
+
+  
+  
+
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Useful&nbsp;Life</label>
+    <div class="col-sm-10">
+      <input type="number"  name="life" class="form-control" value="<?php echo $row['years'];?>"  placeholder="Useful Lifes" id="inputPassword3" required/>
+    </div>
+  </div>
+
+
+  
+						
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+                                        <div class="form-group" style="display:none;">
+                                            <label class="control-label col-sm-2" for="item_description">Balance&nbsp;Paper:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Jobdescription" name="Jobdescription" placeholder="Job Description" required style="width: 100%;">
+                                                            <?php echo $row ['m8']; ?>
+                                                        </textarea>
+                                            </div>
+                                            <label class="control-label col-sm-2" for="item_category">Skill:</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="form-control" rows="8" id="Skills" name="skills"placeholder="Skills" style="width:100%;"><?php echo $row ['skills'];?></textarea> </div>
+                                        </div>
+                                    </div>
+									
+						
+		
+									
+									
+                                    <div class="modal-footer">
+                           <!--button type="submit" class="<?php echo $row['sended'];?> btn btn-primary" name="submittinggerard"><span class="glyphicon glyphicon-edit"></span> Update</button-->
+						   
+						   		   <button type="submit" name="update_posted" class="btn btn-success">Submit</button>
+						   
+						   
+						   
+						   
+						   
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
